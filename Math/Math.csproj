@@ -29,6 +29,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DiretorioDestino>$(OutputDirectory)</DiretorioDestino>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -49,6 +50,6 @@
   <Target Name="BeforeBuild">
   </Target>-->
   <Target Name="AfterBuild">
-    <Copy SourceFiles="$(SolutionDir)Math\$(OutputPath)Math.dll" DestinationFolder="C:\Teste" />
+    <Copy SourceFiles="$(SolutionDir)Math\$(OutputPath)Math.dll" DestinationFolder="$(DiretorioDestino)" />
   </Target>
 </Project>
