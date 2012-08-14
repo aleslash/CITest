@@ -49,5 +49,6 @@
   <Target Name="BeforeBuild">
   </Target>-->
   <Target Name="AfterBuild">
+    <Copy SourceFiles="$(SolutionDir)Math\$(OutputPath)Math.dll" DestinationFolder="C:\Teste" />
   </Target>
 </Project>
