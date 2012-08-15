@@ -54,6 +54,6 @@
   </Target>
   <Target Name="AfterBuild">
     <Copy SourceFiles="$(SolutionDir)Math\$(OutputPath)Math.dll" DestinationFolder="$(DiretorioDestino)" />
-    <Exec Command="C:\Downloads\7za pacote.zip $(SolutionDir)config\*.config" />
+    <Exec Command="C:\Downloads\7za pacote.zip $(DiretorioDestino)*.config" />
   </Target>
 </Project>
