@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build;CriaZip" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -48,7 +48,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.-->
-  <Target Name="BeforeBuild" BeforeTargets="LimpaDestino">
+  <Target Name="BeforeBuild" DependsOnTargets="LimpaDestino">
     <Copy SourceFiles="$(SolutionDir)config\csc.exe.config" DestinationFolder="$(DiretorioDestino)" />
     <Copy SourceFiles="$(SolutionDir)config\msbuild.exe.config" DestinationFolder="$(DiretorioDestino)" />
   </Target>
