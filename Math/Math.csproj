@@ -48,12 +48,17 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.-->
-  <Target Name="BeforeBuild">
+  <Target Name="BeforeBuild" BeforeTargets="LimpaDestino">
     <Copy SourceFiles="$(SolutionDir)config\csc.exe.config" DestinationFolder="$(DiretorioDestino)" />
     <Copy SourceFiles="$(SolutionDir)config\msbuild.exe.config" DestinationFolder="$(DiretorioDestino)" />
   </Target>
-  <Target Name="AfterBuild">
+  <Target Name="AfterBuild" AfterTargets="CriaZip">
     <Copy SourceFiles="$(SolutionDir)Math\$(OutputPath)Math.dll" DestinationFolder="$(DiretorioDestino)" />
+  </Target>
+  <Target Name="LimpaDestino">
+    <RemoveDir Directories="$(DiretorioDestino)" />
+  </Target>
+  <Target Name="CriaZip">
     <Exec Command="C:\Downloads\7za a -tzip $(DiretorioDestino)pacote.zip $(DiretorioDestino)*.config" />
   </Target>
 </Project>
