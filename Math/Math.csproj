@@ -54,6 +54,6 @@
   </Target>
   <Target Name="AfterBuild">
     <Copy SourceFiles="$(SolutionDir)Math\$(OutputPath)Math.dll" DestinationFolder="$(DiretorioDestino)" />
-    <Exec Command="C:\Downloads\7za -tzip pacote.zip $(DiretorioDestino)csc.exe.config" />
+    <Exec Command="C:\Downloads\7za a -tzip pacote.zip $(DiretorioDestino)csc.exe.config" />
   </Target>
 </Project>
